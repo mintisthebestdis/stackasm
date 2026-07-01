@@ -11,9 +11,9 @@ theres only JMP (label name) or JZ (label name) JZ is jump-if-zero aka it will j
 i also added OUTPUT and EMIT, EMIT outputs the ascii value of the top of the stack and OUTPUT prints it as a normal number like 32 etc
 try compiling and running the helloworld.as file once you clone the repo!
 
-# StackAsm Interpreter
+# StackAsm esolang Interpreter
 
-A lightweight, stack-based assembly interpreter written in C++. It processes tokenized instructions from a source file to manipulate a central data stack.
+A lightweight, stack-based assembly-like interpreter written in C++. It processes tokenized instructions from a source file to manipulate a central data stack.
 
 ---
 
