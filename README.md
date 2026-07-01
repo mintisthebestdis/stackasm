@@ -9,6 +9,8 @@ I have not made this readme cause im too lazy but you can read below,
 i have recently added control flow you can make labels with lowercase letters without the need for any colons or similar shit like that
 theres only JMP (label name) or JZ (label name) JZ is jump-if-zero aka it will jump if the top of the stack is zero since there is no heap
 i also added MUL and DIV for complete math operations
+new addition i also added a READ opcode takes input from the standard stdio and pushes it to the stack
+i also made it use unitbuf so you could print your message before exiting 
 if you wanna test a hello world just run the helloworld.as after you clone the repo.
 
 

@@ -12,7 +12,8 @@ void segfault() {
 using namespace std;
 
 int main(int argc, char *argv[]) {
-
+     
+    cout << unitbuf;
     vector<string> lexer;
     vector<int> stack;
     map<string, int> labels;
@@ -128,8 +129,11 @@ int main(int argc, char *argv[]) {
             stack.pop_back();
             stack.push_back(tmp);   
             i++;
-        }
-       else {
+        } else if (lexer[i] == "READ") {
+          cin >> tmp;
+          stack.push_back(tmp);
+          i++;
+        } else {
             i++; 
         }
     }
