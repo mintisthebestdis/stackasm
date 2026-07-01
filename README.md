@@ -5,11 +5,11 @@
 
 
 
-I have not made this readme cause im too lazy but you can read below, and do basic stuff
-but there is no control flow, 
-
-
-
+I have not made this readme cause im too lazy but you can read below,
+i have recently added control flow you can make labels with lowercase letters without the need for any colons or similar shit like that
+theres only JMP (label name) or JZ (label name) JZ is jump-if-zero aka it will jump if the top of the stack is zero since there is no heap
+i also added OUTPUT and EMIT, EMIT outputs the ascii value of the top of the stack and OUTPUT prints it as a normal number like 32 etc
+try compiling and running the helloworld.as file once you clone the repo!
 
 # StackAsm Interpreter
 
