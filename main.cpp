@@ -34,18 +34,24 @@ int main(int argc, char *argv[]) {
         lexer.push_back(currentread);
     }
 
-   
+    // --- FIX: Correctly register valid labels and bypass arguments ---
     for (int i = 0; i < lexer.size(); i++) {
         char first_char = lexer[i][0];
+        
+        // Use operator[] instead of .insert so actual labels overwrite argument entries
         if (first_char >= 'a' && first_char <= 'z') {
-            labels.insert({lexer[i], i});
+            labels[lexer[i]] = i;
+        }
+
+        // Skip instruction arguments so they don't get scanned as labels
+        if (lexer[i] == "PUSH" || lexer[i] == "JMP" || lexer[i] == "JZ") {
+            i++; 
         }
     }
 
     int tmp;
     int i = 0;
 
-    
     while (i < lexer.size()) {
 
         if (lexer[i] == "JMP") {
@@ -111,7 +117,7 @@ int main(int argc, char *argv[]) {
         else if (lexer[i] == "OUTPUT") {
             cout << stack.back();
             i++;
-        }else if (lexer[i] == "MUL") {
+        } else if (lexer[i] == "MUL") {
             int size = stack.size();
             tmp = stack[size - 2] * stack[size - 1];
             stack.pop_back();
@@ -130,9 +136,9 @@ int main(int argc, char *argv[]) {
             stack.push_back(tmp);   
             i++;
         } else if (lexer[i] == "READ") {
-          cin >> tmp;
-          stack.push_back(tmp);
-          i++;
+            cin >> tmp;
+            stack.push_back(tmp);
+            i++;
         } else {
             i++; 
         }
